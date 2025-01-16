@@ -1,1 +1,1 @@
-this is my react practice project
+This is a react project
