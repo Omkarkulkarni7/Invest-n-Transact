@@ -1,11 +1,17 @@
-
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
+const { sequelize } = require("./src/models"); // Import Sequelize instance
 
-const authRoutes = require("./src/routes/authRoutes"); // Import auth routes
-const userRoutes = require("./src/routes/userRoutes");
-const adminRoutes = require("./src/routes/adminRoutes");
+// Import routes
+const authRoutes = require("./src/routes/auth.routes");
+const userRoutes = require("./src/routes/user.routes");
+const adminRoutes = require("./src/routes/admin.routes");
+const bankAccountRoutes = require("./src/routes/bankAccount.routes");
+const transactionRoutes = require("./src/routes/transactions.routes");
+const paymentRoutes = require("./src/routes/payments.routes");
+const stockRoutes = require("./src/routes/stock.routes");
+const investmentRoutes = require("./src/routes/investment.routes")
 
 const app = express();
 
@@ -13,19 +19,28 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Routes
+// Server setup
+app.listen(5000, () => console.log("Server running on port 5000"));
 
-// Basic welcome route
+// Routes
 app.get("/", (req, res) => {
   res.send("Welcome to the WealthWise project!");
 });
 
-app.use("/api/auth", authRoutes); // Use auth routes
+app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/bank-accounts", bankAccountRoutes);
+app.use("/api/transactions", transactionRoutes);
+app.use("/api/payments", paymentRoutes);
+app.use("/api/stocks", stockRoutes)
+app.use("/api/investments", investmentRoutes)
 
-// Server Start
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
+// Global Error Handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: "Something went wrong!", error: err.message });
+});
 
+module.exports = app;
