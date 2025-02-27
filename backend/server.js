@@ -17,7 +17,15 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+// In backend/server.js
+app.use(
+  cors({
+      origin: "http://localhost:3000", // ✅ Allow frontend origin
+      credentials: true, // ✅ Allow cookies & authentication headers
+      methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // ✅ Allow all request methods
+      allowedHeaders: "Content-Type,Authorization", // ✅ Allow headers
+  })
+);
 
 // Server setup
 app.listen(5000, () => console.log("Server running on port 5000"));

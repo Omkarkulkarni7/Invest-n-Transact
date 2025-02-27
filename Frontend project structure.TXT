@@ -1,0 +1,66 @@
+📦 wealthwise-frontend
+ ┣ 📂 public
+ ┃ ┣ 📜 index.html
+ ┃ ┣ 📜 manifest.json
+ ┃ ┗ 📂 assets (static images, logos)
+ ┣ 📂 src
+ ┃ ┣ 📂 api
+ ┃ ┃ ┣ 📜 axiosInstance.js  # Axios setup with baseURL
+ ┃ ┃ ┣ 📜 authApi.js         # Authentication API calls
+ ┃ ┃ ┣ 📜 stockApi.js        # Fetch stock-related data
+ ┃ ┃ ┗ 📜 transactionApi.js  # Transaction-related calls
+ ┃ ┣ 📂 assets               # Images, logos, icons
+ ┃ ┣ 📂 components
+ ┃ ┃ ┣ 📂 auth
+ ┃ ┃ ┃ ┣ 📜 LoginForm.jsx
+ ┃ ┃ ┃ ┗ 📜 RegisterForm.jsx
+ ┃ ┃ ┣ 📂 dashboard
+ ┃ ┃ ┃ ┣ 📜 StockCard.jsx    # Individual stock UI
+ ┃ ┃ ┃ ┣ 📜 PortfolioCard.jsx
+ ┃ ┃ ┃ ┣ 📜 TransactionCard.jsx
+ ┃ ┃ ┃ ┗ 📜 Sidebar.jsx
+ ┃ ┃ ┣ 📂 common
+ ┃ ┃ ┃ ┣ 📜 Navbar.jsx
+ ┃ ┃ ┃ ┣ 📜 Footer.jsx
+ ┃ ┃ ┃ ┣ 📜 ProtectedRoute.jsx # Redirects unauth users
+ ┃ ┃ ┃ ┗ 📜 Loader.jsx
+ ┃ ┣ 📂 context
+ ┃ ┃ ┗ 📜 AuthContext.js
+ ┃ ┣ 📂 hooks
+ ┃ ┃ ┗ 📜 useAuth.js
+ ┃ ┣ 📂 layouts
+ ┃ ┃ ┣ 📜 AuthLayout.jsx
+ ┃ ┃ ┗ 📜 DashboardLayout.jsx
+ ┃ ┣ 📂 pages
+ ┃ ┃ ┣ 📜 Home.jsx
+ ┃ ┃ ┣ 📜 Login.jsx
+ ┃ ┃ ┣ 📜 Register.jsx
+ ┃ ┃ ┣ 📜 Dashboard.jsx
+ ┃ ┃ ┣ 📜 Stocks.jsx
+ ┃ ┃ ┣ 📜 Portfolio.jsx
+ ┃ ┃ ┣ 📜 Transactions.jsx
+ ┃ ┃ ┗ 📜 NotFound.jsx
+ ┃ ┣ 📂 redux
+ ┃ ┃ ┣ 📂 slices
+ ┃ ┃ ┃ ┣ 📜 authSlice.js
+ ┃ ┃ ┃ ┣ 📜 stockSlice.js
+ ┃ ┃ ┃ ┣ 📜 portfolioSlice.js
+ ┃ ┃ ┃ ┗ 📜 transactionSlice.js
+ ┃ ┃ ┣ 📜 store.js
+ ┃ ┣ 📂 routes
+ ┃ ┃ ┗ 📜 AppRoutes.jsx
+ ┃ ┣ 📂 styles
+ ┃ ┃ ┣ 📜 global.css
+ ┃ ┃ ┗ 📜 theme.js
+ ┃ ┣ 📂 utils
+ ┃ ┃ ┣ 📜 formatCurrency.js
+ ┃ ┃ ┣ 📜 calculateROI.js
+ ┃ ┃ ┗ 📜 validateForm.js
+ ┃ ┣ 📜 App.jsx
+ ┃ ┣ 📜 main.jsx
+ ┃ ┗ 📜 vite.config.js
+ ┣ 📜 .env
+ ┣ 📜 .gitignore
+ ┣ 📜 package.json
+ ┣ 📜 README.md
+ ┗ 📜 tailwind.config.js (if using Tailwind)
